@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Emoji License</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+<body>
+  <p>下記のカスタム絵文字は、利用条件が設定されています。</p>
+  <table class="pure-table-striped">
+    <thead><tr><th>イメージ</th><th>名前</th><th>コピー</th><th>ライセンス</th></tr></thead>
+    <tbody>
+    <% emojis.forEach(function(emoji) { %>
+      <tr>
+        <td><a href="<%= url %>emojis/<%= emoji.name %>"><img src="<%= emoji.publicUrl %>" height="48"></a></td>
+        <td><%= emoji.name %></td>
+        <td><%= emoji.copy %></td>
+        <td><%= emoji.license %></td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
